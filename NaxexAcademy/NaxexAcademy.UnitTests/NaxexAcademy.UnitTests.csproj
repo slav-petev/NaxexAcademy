@@ -12,4 +12,10 @@
     <PackageReference Include="MSTest.TestFramework" Version="1.1.18" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\NaxexAcademy.Common\NaxexAcademy.Common.csproj" />
+    <ProjectReference Include="..\NaxexAcademy.Core\NaxexAcademy.Core.csproj" />
+    <ProjectReference Include="..\NaxexAcademy.Web\NaxexAcademy.Web.csproj" />
+  </ItemGroup>
+
 </Project>
