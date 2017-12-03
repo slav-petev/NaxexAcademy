@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NaxexAcademy.Common;
+using NaxexAcademy.Common.Result;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -43,7 +44,7 @@ namespace NaxexAcademy.UnitTests.Common
         [TestMethod]
         public void ShouldThrowInvalidOperationExceptionWhenTryingToAccessValueOfFailedResult()
         {
-            var failedResult = Result<int>.Fail("some error message");
+            var failedResult = ValueResult<int>.Fail("some error message");
             Assert.ThrowsException<InvalidOperationException>(() =>
                 failedResult.Value);
         }
@@ -51,7 +52,7 @@ namespace NaxexAcademy.UnitTests.Common
         [TestMethod]
         public void ShouldGetValueCorrectlyForSuccessResult()
         {
-            var okResult = Result<int>.Ok(int.MinValue);
+            var okResult = ValueResult<int>.Ok(int.MinValue);
 
             Assert.AreEqual(int.MinValue, okResult.Value);
         }

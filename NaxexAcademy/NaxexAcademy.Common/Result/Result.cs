@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NaxexAcademy.Common
+namespace NaxexAcademy.Common.Result
 {
     /// <summary>
     /// Indicates if an operation was successful or not.
@@ -55,40 +55,5 @@ namespace NaxexAcademy.Common
         /// <returns>A result with failed status and an error</returns>
         public static Result Fail(string error) => 
             new Result(false, error);
-    }
-
-    /// <summary>
-    /// Indicates if an operation that returns value was successful or not.
-    /// </summary>
-    public sealed class Result<T> : Result
-    {
-        private readonly T _value;
-
-        /// <summary>
-        /// Gets the value of the result instance. If the Result is
-        /// failure, an <see cref="System.InvalidOperationException"/> is thrown
-        /// </summary>
-        public T Value
-        {
-            get
-            {
-                if (this.IsFailure)
-                    throw new InvalidOperationException("");
-
-                return _value;
-            }
-        }
-
-        public Result(bool isSuccess, string error, T value) 
-            : base(isSuccess, error)
-        {
-            _value = value;
-        }
-
-        public static Result<T>Ok(T value) =>
-            new Result<T>(true, null, value);
-
-        public new static Result<T> Fail(string error) =>
-            new Result<T>(false, error, default(T));
     }
 }
