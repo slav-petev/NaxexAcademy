@@ -2,9 +2,9 @@
 using NaxexAcademy.Core.Errors;
 using System;
 
-namespace NaxexAcademy.Core
+namespace NaxexAcademy.Core.ValueObjects
 {
-    public class Id
+    public class Id : ValueObject<Id>
     {
         public int Value { get; }
 
@@ -13,19 +13,12 @@ namespace NaxexAcademy.Core
             this.Value = value;
         }
 
-        public override bool Equals(object other)
+        protected override bool EqualsCore(Id other)
         {
-            if (ReferenceEquals(this, other)) return true;
-            if (ReferenceEquals(this, null)) return false;
-            if (ReferenceEquals(other, null)) return false;
-            if (this.GetType() != other.GetType()) return false;
-
-            var otherId = (Id)other;
-
-            return this.Value.Equals(otherId.Value);
+            return this.Value.Equals(other.Value);
         }
 
-        public override int GetHashCode()
+        protected override int GetHashCodeCore()
         {
             return this.Value.GetHashCode();
         }

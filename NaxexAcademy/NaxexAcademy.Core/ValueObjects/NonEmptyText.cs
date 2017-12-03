@@ -2,9 +2,9 @@
 using NaxexAcademy.Common.Result;
 using NaxexAcademy.Core.Errors;
 
-namespace NaxexAcademy.Core
+namespace NaxexAcademy.Core.ValueObjects
 {
-    public class NonEmptyText
+    public class NonEmptyText : ValueObject<NonEmptyText>
     {
         public string Value { get; }
 
@@ -13,18 +13,12 @@ namespace NaxexAcademy.Core
             this.Value = value;
         }
 
-        public override bool Equals(object other)
+        protected override bool EqualsCore(NonEmptyText other)
         {
-            if (ReferenceEquals(this, other)) return true;
-            if (ReferenceEquals(this, null)) return false;
-            if (ReferenceEquals(other, null)) return false;
-            if (this.GetType() != other.GetType()) return false;
-
-            var otherText = (NonEmptyText)other;
-            return this.Value.Equals(otherText.Value);
+            return this.Value.Equals(other.Value);
         }
 
-        public override int GetHashCode()
+        protected override int GetHashCodeCore()
         {
             return this.Value.GetHashCode();
         }
