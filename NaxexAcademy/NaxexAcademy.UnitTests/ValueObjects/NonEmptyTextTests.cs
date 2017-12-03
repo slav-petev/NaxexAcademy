@@ -21,12 +21,21 @@ namespace NaxexAcademy.UnitTests.ValueObjects
         }
 
         [TestMethod]
-        public void SholdReturnTrueWhenComparingNonEmptyTextsWithEqualValue()
+        public void SholdReturnTrueWhenComparingNonEmptyTextsWithSameValue()
         {
             var firstText = NonEmptyText.Create(SampleTextValue).Value;
             var secondText = NonEmptyText.Create(SampleTextValue).Value;
 
             Assert.AreEqual(firstText, secondText);
+        }
+
+        [TestMethod]
+        public void ShouldReturnFalseWhenComparingNonEmptyTextsWithDifferentValue()
+        {
+            var firstText = NonEmptyText.Create(SampleTextValue).Value;
+            var secondText = NonEmptyText.Create("another").Value;
+
+            Assert.AreNotEqual(firstText, secondText);
         }
 
         [TestMethod]

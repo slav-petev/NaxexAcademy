@@ -19,12 +19,21 @@ namespace NaxexAcademy.UnitTests.ValueObjects
         }
 
         [TestMethod]
-        public void ShouldReturnTrueWhenComparingIdsWithEqualValue()
+        public void ShouldReturnTrueWhenComparingIdsWithSameValue()
         {
             var firstId = Id.Create(1).Value;
             var secondId = Id.Create(1).Value;
 
             Assert.AreEqual(firstId, secondId);
+        }
+
+        [TestMethod]
+        public void ShouldReturnFalseWhenComparingIdsWithDifferentValue()
+        {
+            var firstId = Id.Create(1).Value;
+            var secondId = Id.Create(2).Value;
+
+            Assert.AreNotEqual(firstId, secondId);
         }
 
         [TestMethod]
