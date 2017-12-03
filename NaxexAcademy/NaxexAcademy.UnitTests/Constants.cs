@@ -10,6 +10,8 @@
                 "ValueObjects.Id";
             internal const string ValueObjectsNonEmptyText =
                 "ValueObjects.NonEmptyText";
+            internal const string CommonMaybe =
+                "Common.Maybe";
         }
     }
 }
