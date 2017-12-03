@@ -41,8 +41,6 @@ namespace NaxexAcademy.UnitTests.ValueObjects
             var idResult = Id.Create(-1);
 
             Assert.IsTrue(idResult.IsFailure);
-            Assert.AreEqual(
-                ErrorMessages.Id.IdCannotBeNonPositive, idResult.Error);
         }
 
         [TestMethod]
@@ -51,8 +49,6 @@ namespace NaxexAcademy.UnitTests.ValueObjects
             var idResult = Id.Create(0);
 
             Assert.IsTrue(idResult.IsFailure);
-            Assert.AreEqual(
-                ErrorMessages.Id.IdCannotBeNonPositive, idResult.Error);
         }
     }
 }
