@@ -8,8 +8,12 @@ namespace NaxexAcademy.UnitTests
     {
         internal static class TestCategories
         {
-            internal const string CommonResult = "Common.Result";
-            internal const string ValueObjectsId = "ValueObjects.Id";
+            internal const string CommonResult = 
+                "Common.Result";
+            internal const string ValueObjectsId = 
+                "ValueObjects.Id";
+            internal const string ValueObjectsNonEmptyText =
+                "ValueObjects.NonEmptyText";
         }
     }
 }

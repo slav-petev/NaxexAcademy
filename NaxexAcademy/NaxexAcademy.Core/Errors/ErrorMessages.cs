@@ -12,5 +12,10 @@ namespace NaxexAcademy.Core.Errors
                 "Id cannot be zero or negative";
         }
 
+        public static class NonEmptyText
+        {
+            public const string TextValueCannotBeEmpty =
+                "Text value is empty or contains only whitespaces";
+        }
     }
 }
