@@ -1,9 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NaxexAcademy.Common;
 using NaxexAcademy.Common.Result;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace NaxexAcademy.UnitTests.Common
 {

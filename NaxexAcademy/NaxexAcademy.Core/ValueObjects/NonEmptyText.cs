@@ -1,5 +1,4 @@
-﻿using System;
-using NaxexAcademy.Common.Result;
+﻿using NaxexAcademy.Common.Result;
 using NaxexAcademy.Core.Errors;
 
 namespace NaxexAcademy.Core.ValueObjects

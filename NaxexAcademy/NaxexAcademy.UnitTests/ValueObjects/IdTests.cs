@@ -1,13 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NaxexAcademy.Common.Result;
-using NaxexAcademy.Core;
-using NaxexAcademy.Core.Errors;
 using NaxexAcademy.Core.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NaxexAcademy.UnitTests.ValueObjects
 {

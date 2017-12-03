@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace NaxexAcademy.Core
+﻿namespace NaxexAcademy.Core
 {
     public abstract class ValueObject<T>
         where T : ValueObject<T>
