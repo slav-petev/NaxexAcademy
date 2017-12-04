@@ -8,7 +8,7 @@ namespace NaxexAcademy.Core
 {
     public abstract class Entity
     {
-        public Maybe<Id> Id { get; }
+        public Maybe<Id> Id { get; protected set; }
 
         public override bool Equals(object other)
         {

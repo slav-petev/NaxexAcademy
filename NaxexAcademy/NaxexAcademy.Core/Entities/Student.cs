@@ -5,9 +5,8 @@ using NaxexAcademy.Common;
 
 namespace NaxexAcademy.Core.Entities
 {
-    public class Student
+    public class Student : Entity
     {
-        public Maybe<Id> Id { get; }
         public NonEmptyText Name { get; }
         
         private Student(NonEmptyText name)
@@ -32,7 +31,7 @@ namespace NaxexAcademy.Core.Entities
 
         public static ValueResult<Student> Create(string name, int id)
         {
-            var idResult = NaxexAcademy.Core.ValueObjects.Id.Create(id);
+            var idResult = ValueObjects.Id.Create(id);
             if (idResult.IsFailure)
                 return ValueResult<Student>.Fail(idResult.Error);
             var studentResult = Create(name);

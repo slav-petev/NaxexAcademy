@@ -14,6 +14,8 @@
                 "Common.Maybe";
             internal const string EntitiesStudent =
                 "Entities.Student";
+            internal const string EntitesCourse =
+                "Entities.Course";
         }
     }
 }

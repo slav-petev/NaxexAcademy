@@ -6,6 +6,7 @@ using System.Text;
 namespace NaxexAcademy.UnitTests.Entities
 {
     [TestClass]
+    [TestCategory(Constants.TestCategories.EntitesCourse)]
     public class CourseTests
     {
         [TestMethod]
