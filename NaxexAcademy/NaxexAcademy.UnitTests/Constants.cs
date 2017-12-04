@@ -12,6 +12,8 @@
                 "ValueObjects.NonEmptyText";
             internal const string CommonMaybe =
                 "Common.Maybe";
+            internal const string EntitiesStudent =
+                "Entities.Student";
         }
     }
 }

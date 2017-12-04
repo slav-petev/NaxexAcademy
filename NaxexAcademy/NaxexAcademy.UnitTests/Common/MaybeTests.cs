@@ -97,5 +97,26 @@ namespace NaxexAcademy.UnitTests.Common
 
             Assert.AreNotEqual(firstMaybe, secondMaybe);
         }
+
+        [TestMethod]
+        public void ShouldDisplayUnderlyingTypeStringRepresentationWhenHasValue()
+        {
+            const string testValue = "Sample Value";
+            var stringMaybe = Maybe<string>.From(testValue);
+
+            var stringRepresentation = stringMaybe.ToString();
+
+            Assert.AreEqual(testValue, stringRepresentation);
+        }
+
+        [TestMethod]
+        public void ShouldDisplayNoValueWhenHasNoValue()
+        {
+            var stringMaybe = Maybe<string>.From(null);
+
+            var stringRepresentation = stringMaybe.ToString();
+
+            Assert.AreEqual("No Value", stringRepresentation);
+        }
     }
 }

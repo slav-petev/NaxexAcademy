@@ -50,6 +50,13 @@ namespace NaxexAcademy.Common
                 : 0;
         }
 
+        public override string ToString()
+        {
+            return _value != null 
+                ? _value.ToString()
+                : "No Value";
+        }
+
         public static bool operator ==(Maybe<T> first, Maybe<T> second)
         {
             return first.Equals(second);
